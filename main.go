@@ -7,17 +7,6 @@ import (
 	"github.com/go-chi/chi/v5"
 )
 
-// func pathHandler(w http.ResponseWriter, r *http.Request) {
-// 	switch r.URL.Path {
-// 	case "/":
-// 		homeHandler(w, r)
-// 	case "/contact":
-// 		contactHandler(w, r)
-// 	default:
-// 		http.Error(w, "Page Not Found", http.StatusNotFound)
-// 	}
-// }
-
 func homeHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 	fmt.Fprint(w, "<h1>Wecome to my amazing site!</h2>")
@@ -48,21 +37,6 @@ func faqHandler(w http.ResponseWriter, r *http.Request) {
 	</ul>
 	`)
 }
-
-// type Router struct{}
-
-// func (router Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-// 	switch r.URL.Path {
-// 	case "/":
-// 		homeHandler(w, r)
-// 	case "/contact":
-// 		contactHandler(w, r)
-// 	case "/faq":
-// 		faqHandler(w, r)
-// 	default:
-// 		http.Error(w, "Page Not Found", http.StatusNotFound)
-// 	}
-// }
 
 func main() {
 	r := chi.NewRouter()
