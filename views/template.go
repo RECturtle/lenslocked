@@ -11,6 +11,14 @@ type Template struct {
 	htmlTpl *template.Template
 }
 
+func Must(t Template, err error) Template {
+	if err != nil {
+		panic(err)
+	}
+
+	return t
+}
+
 func (t Template) Execute(w http.ResponseWriter, data interface{}) {
 	w.Header().Set("Content-Type", "text/html; charset=utf-8")
 
