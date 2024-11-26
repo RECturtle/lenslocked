@@ -16,7 +16,6 @@ func main() {
 	r.Use(middleware.Logger)
 
 	tpl := views.Must(views.ParseFS(templates.FS, "home.gohtml"))
-
 	r.Get("/", controllers.StaticHandler(tpl))
 
 	tpl = views.Must(views.ParseFS(templates.FS, "contact.gohtml"))
